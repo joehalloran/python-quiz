@@ -1,3 +1,5 @@
+# TODO: Add description of quiz.py
+
 def runQuiz(user):
 	difficulty = selectDifficulty()
 	questions = loadQuestions(difficulty)
@@ -23,15 +25,15 @@ def selectDifficulty():
 		return selectDifficulty()
 
 def loadQuestions(difficulty):
-	#TODO
+	#TODO: Get real questions from file (based on difficulty)
 	return ["Capital of France?", "Capital of UK?", "Capital of Russia?"]
 
 def loadAnswers(difficulty):
-	#TODO
+	#TODO: Get real answers from file (based on difficulty)
 	return [["Paris", "Berlin", "Rome"], ["London", "Cardiff", "Edinborough"], ["Moscow", "Warsaw", "Kiev"]]
 
 def loadCorrectAnswers(difficulty):
-	#TODO
+	#TODO: Get real correct answers from file (based on difficulty)
 	return ["Paris", "London", "Moscow"]
 
 def askQuestions(questions, answers, correctAnswers):

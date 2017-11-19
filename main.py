@@ -1,3 +1,5 @@
+# TODO: Add description of main.py
+
 import user, quiz, gamedata
 
 def main(user, quiz, gamedata):

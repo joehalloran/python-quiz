@@ -1,5 +1,7 @@
+# TODO: Add description of gamedata.py
+
 def saveScore(user, score):
-	#TODO
+	#TODO: Actually save scores to file
 	return
 
 def reportScore(user, score):
@@ -21,5 +23,5 @@ def showFinalMenu(user):
 		exit()
 
 def getHighScores(user):
-	#TODO
+	#TODO: Load historical scores from file
 	return ["1st Jan 2017: 2", "2nd Feb 2017: 3", "4th June 2017: 5"]

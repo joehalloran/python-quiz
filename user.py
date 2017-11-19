@@ -1,3 +1,5 @@
+# TODO: Add description of user.py
+
 def registerUserIfRequired():
 	registrationRequired = isRegistrationRequired()
 	if (registrationRequired):
@@ -39,7 +41,7 @@ def choosePassword():
 		return passwordOne
 
 def saveRegistrationDetails(name, age, yearGroup, password):
-	#TODO
+	#TODO: Save user details to file
 	return
 
 def login(attemps):
@@ -59,7 +61,7 @@ def login(attemps):
 
 			
 def loginValid(userName, password):
-	#TODO
+	#TODO: Check password against the one saved in file.
 	return True
 
 
