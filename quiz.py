@@ -1,5 +1,7 @@
 # TODO: Add description of quiz.py
 
+import filehandler
+
 def runQuiz(user):
 	difficulty = selectDifficulty()
 	questions = loadQuestions(difficulty)
@@ -25,16 +27,13 @@ def selectDifficulty():
 		return selectDifficulty()
 
 def loadQuestions(difficulty):
-	#TODO: Get real questions from file (based on difficulty)
-	return ["Capital of France?", "Capital of UK?", "Capital of Russia?"]
+	return filehandler.getQuestionsFromFile(difficulty)
 
 def loadAnswers(difficulty):
-	#TODO: Get real answers from file (based on difficulty)
-	return [["Paris", "Berlin", "Rome"], ["London", "Cardiff", "Edinborough"], ["Moscow", "Warsaw", "Kiev"]]
+	return filehandler.getAnswersFromFile(difficulty)
 
 def loadCorrectAnswers(difficulty):
-	#TODO: Get real correct answers from file (based on difficulty)
-	return ["Paris", "London", "Moscow"]
+	return filehandler.getCorrectAnswersFromFile(difficulty)
 
 def askQuestions(questions, answers, correctAnswers):
 	score = 0
@@ -47,7 +46,12 @@ def askQuestions(questions, answers, correctAnswers):
 			answerCounter = answerCounter + 1
 		userSelection = int(input("> "))
 		if (answers[counter][userSelection] == correctAnswers[counter]):
+			print("correct")
 			score = score + 1
+		else:
+			print("unlucky")
+			print(answers[counter][userSelection])
+			print(correctAnswers[counter])
 		counter = counter + 1
 	return score
 

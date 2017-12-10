@@ -1,4 +1,5 @@
 # TODO: Add description of user.py
+import filehandler
 
 def registerUserIfRequired():
 	registrationRequired = isRegistrationRequired()
@@ -21,6 +22,9 @@ def isRegistrationRequired():
 
 def registerUser():
 	name = input("What is your name > ")
+	if filehandler.nameAlreadyRegistered(name):
+		registerUser()
+		return
 	age = input("How old are you > ")
 	yearGroup = input("What year group are you in?")
 	password = choosePassword()
@@ -41,8 +45,7 @@ def choosePassword():
 		return passwordOne
 
 def saveRegistrationDetails(name, age, yearGroup, password):
-	#TODO: Save user details to file
-	return
+	filehandler.saveRegistrationDetailsToFiles(name, age, yearGroup, password)
 
 def login(attemps):
 	userName = input("Username > ")
