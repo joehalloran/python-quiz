@@ -7,22 +7,26 @@ def registerUserIfRequired():
 		registerUser()
 
 def isRegistrationRequired():
+	print()
 	print("Do you need to register?")
-	print("Press y to register")
-	print("Press n to login")
+	print("Press 1 to login")
+	print("Press 2 to register")
 	userSelection = input("> ")
 	print(userSelection)
-	if (userSelection == "y"):
-		return True
-	elif (userSelection == "n"):
+	if (userSelection == "1"):
 		return False
+	elif (userSelection == "2"):
+		return True
 	else:
 		print("Invalid selection. Try again.")
 		return isRegistrationRequired()
 
 def registerUser():
+	print()
+	print("REGISTER:")
 	name = input("What is your name > ")
 	if filehandler.nameAlreadyRegistered(name):
+		print("This name has already been registered. Try again.")
 		registerUser()
 		return
 	age = input("How old are you > ")
@@ -48,10 +52,12 @@ def saveRegistrationDetails(name, age, yearGroup, password):
 	filehandler.saveRegistrationDetailsToFiles(name, age, yearGroup, password)
 
 def login(attemps):
+	print()
+	print("LOGIN:")
 	userName = input("Username > ")
 	password = input("Password > ")
 	if loginValid(userName, password):
-		return "user"
+		return userName
 	else:
 		attemps = attemps -1
 		print("Username and password incorrect")
@@ -64,8 +70,7 @@ def login(attemps):
 
 			
 def loginValid(userName, password):
-	#TODO: Check password against the one saved in file.
-	return True
+	return filehandler.loginValid(userName, password)
 
 
 

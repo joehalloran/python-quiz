@@ -1,20 +1,25 @@
 # TODO: Add description of gamedata.py
 
+import filehandler
+
 def saveScore(user, score):
-	#TODO: Actually save scores to file
-	return
+	filehandler.saveScore(user, score)	
 
 def reportScore(user, score):
+	print()
 	print("Well done " + user + " your final score was...")
 	print(score)
 	showFinalMenu(user)
 
 def showFinalMenu(user):
+	print()
 	print("Press 1 to show your high scores")
 	print("Press 2 to quit")
 	userSelection = input("> ")
 	if userSelection == '1':
 		highScores = getHighScores(user)
+		print()
+		print("Your highscores:")
 		for score in highScores:
 			print(score)
 		showFinalMenu(user)
@@ -23,5 +28,5 @@ def showFinalMenu(user):
 		exit()
 
 def getHighScores(user):
-	#TODO: Load historical scores from file
-	return ["1st Jan 2017: 2", "2nd Feb 2017: 3", "4th June 2017: 5"]
+	return filehandler.loadHighScores(user)
+	

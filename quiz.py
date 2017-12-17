@@ -1,4 +1,5 @@
-# TODO: Add description of quiz.py
+# Quiz module is responible for displaying questions & answers, and handling all user 
+# input in the quiz.
 
 import filehandler
 
@@ -11,7 +12,8 @@ def runQuiz(user):
 	return score
 
 def selectDifficulty():
-	print("Select difficulty")
+	print()
+	print("SELECT DIFFICULTY")
 	print("Press 1 for Easy")
 	print("Press 2 for Medium")
 	print("Press 3 for Hard")
@@ -39,6 +41,8 @@ def askQuestions(questions, answers, correctAnswers):
 	score = 0
 	counter = 0
 	while counter < len(questions):
+		print()
+		print("QUESTION " + str(counter + 1) + ":")
 		print(questions[counter])
 		answerCounter = 0
 		for answer in answers[counter]:

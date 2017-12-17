@@ -1,3 +1,7 @@
+# Custom for python quiz project
+data/users/registered_users.txt
+data/scores/saved_scores.txt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
