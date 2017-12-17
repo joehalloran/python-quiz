@@ -54,8 +54,6 @@ def askQuestions(questions, answers, correctAnswers):
 			score = score + 1
 		else:
 			print("unlucky")
-			print(answers[counter][userSelection])
-			print(correctAnswers[counter])
 		counter = counter + 1
 	return score
 
